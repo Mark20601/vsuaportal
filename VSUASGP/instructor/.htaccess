@@ -1,0 +1,5 @@
+RewriteEngine On
+
+# Redirect to parent index.php with correct URL
+RewriteRule ^$ /VSUASGP/index.php [R=302,L]
+RewriteRule ^index\.php$ /VSUASGP/index.php [R=302,L]

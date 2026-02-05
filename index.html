@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Academic Portal</title>
+    
+        <!-- TailwindCSS CDN -->
+    <script src="js/tailwindtheme.js"></script>
+     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="css/welcome.css">
+    <link rel="stylesheet" href="css/fontawesome/fontawesome-free-5.15.4-web/css/all.min.css">
+    
+    <style>
+       
+    </style>
+</head>
+<body class="gradient-bg">
+    <!-- Navigation -->
+    <nav class="bg-[#17321A] text-white sticky top-0 z-50 shadow-lg glass-effect">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-[#146939] to-[#00954F] rounded-xl flex items-center justify-center shadow-lg">
+                        <i class="fas fa-graduation-cap text-white text-lg"></i>
+                    </div>
+                    <span class="text-xl font-bold">Student Academic Portal</span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-[#FCD83D] transition-colors duration-300 font-medium">Home</a>
+                    <a href="#features" class="hover:text-[#FCD83D] transition-colors duration-300 font-medium">Features</a>
+                    <a href="#about" class="hover:text-[#FCD83D] transition-colors duration-300 font-medium">About</a>
+                    <a href="#" onclick="openModal('terms-modal')" class="hover:text-[#FCD83D] transition-colors duration-300 font-medium">Terms</a>
+                    <a href="#" onclick="openModal('privacy-modal')" class="hover:text-[#FCD83D] transition-colors duration-300 font-medium">Privacy</a>
+                    <a href="{{ route('login') }}" class="bg-[#146939] hover:bg-[#00954F] text-white px-6 py-2 rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg">
+                        Login
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-3 pb-2">
+                <a href="#home" class="block hover:text-[#FCD83D] transition-colors duration-300">Home</a>
+                <a href="#features" class="block hover:text-[#FCD83D] transition-colors duration-300">Features</a>
+                <a href="#about" class="block hover:text-[#FCD83D] transition-colors duration-300">About</a>
+                <a href="#" onclick="openModal('terms-modal')" class="block hover:text-[#FCD83D] transition-colors duration-300">Terms</a>
+                <a href="#" onclick="openModal('privacy-modal')" class="block hover:text-[#FCD83D] transition-colors duration-300">Privacy</a>
+                <a href="VSUASGP/index.php" class="block w-full bg-[#146939] hover:bg-[#00954F] text-white px-6 py-3 rounded-xl transition-all duration-300 mt-2 text-center">
+                    Login
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold text-[#17321A] mb-6 fade-in">
+                VSU-Alangalang Student Academic
+                <span class="bg-gradient-to-r from-[#146939] to-[#00954F] bg-clip-text text-transparent">Portal</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto fade-in leading-relaxed">
+                Your all-in-one platform for academic success, grade tracking, and educational resources.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in">
+                <a href="VSUASGP/index.php"
+                   class="bg-gradient-to-r from-[#146939] to-[#00954F] text-white px-8 py-4 rounded-2xl hover:shadow-xl transition-all duration-300 font-semibold flex items-center space-x-2 group shadow-lg">
+                    <span>Get Started</span>
+                    <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <button
+                    onclick="scrollToSection('features')"
+                    class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl hover:border-[#146939] hover:text-[#146939] transition-all duration-300 font-semibold"
+                >
+                    Learn More
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-white/50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold text-[#17321A] mb-4">Powerful Features</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Everything you need to excel in your academic journey
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 fade-in">
+                    <div class="w-20 h-20 bg-gradient-to-r from-[#146939] to-[#00954F] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-chart-line text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#17321A] mb-4 text-center">Easy Grade Tracking</h3>
+                    <p class="text-gray-600 text-center">
+                        Monitor your academic performance with real-time grade updates and progress tracking.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 fade-in">
+                    <div class="w-20 h-20 bg-gradient-to-r from-[#00954F] to-[#146939] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-file-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#17321A] mb-4 text-center">Academic Reports</h3>
+                    <p class="text-gray-600 text-center">
+                        Generate detailed reports and insights about your academic journey and performance.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-8 rounded-3xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 fade-in">
+                    <div class="w-20 h-20 bg-gradient-to-r from-[#FDC530] to-[#FCD83D] rounded-2xl flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-[#17321A] mb-4 text-center">Secure Access</h3>
+                    <p class="text-gray-600 text-center">
+                        Your academic data is protected with enterprise-grade security and privacy controls.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#17321A] text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-10 h-10 bg-gradient-to-r from-[#146939] to-[#00954F] rounded-xl flex items-center justify-center">
+                            <i class="fas fa-graduation-cap text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold">StudentPortal</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Empowering students through innovative academic tools and resources.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-[#FCD83D] transition-colors">Home</a></li>
+                        <li><a href="#features" class="text-gray-400 hover:text-[#FCD83D] transition-colors">Features</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-[#FCD83D] transition-colors">About</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" onclick="openModal('terms-modal')" class="text-gray-400 hover:text-[#FCD83D] transition-colors">Terms of Service</a></li>
+                        <li><a href="#" onclick="openModal('privacy-modal')" class="text-gray-400 hover:text-[#FCD83D] transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-[#FCD83D] transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-[#FCD83D] transition-colors">Help Center</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Student Academic Portal. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="terms-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-100 p-6 rounded-t-3xl">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-2xl font-bold text-[#17321A]">Terms of Service</h3>
+                    <button onclick="closeModal('terms-modal')" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="space-y-4 text-gray-700">
+                    <p>Welcome to our Student Academic Portal. By accessing our platform, you agree to these terms and conditions.</p>
+                    <h4 class="font-semibold text-[#17321A] mt-6">Academic Use</h4>
+                    <p>This platform is intended for legitimate educational purposes. Users must maintain academic integrity and comply with institutional policies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacy-modal" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+            <div class="sticky top-0 bg-white border-b border-gray-100 p-6 rounded-t-3xl">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-2xl font-bold text-[#17321A]">Privacy Policy</h3>
+                    <button onclick="closeModal('privacy-modal')" class="text-gray-400 hover:text-gray-600 transition-colors">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6">
+                <div class="space-y-4 text-gray-700">
+                    <p>Your privacy is important to us. This policy explains how we handle your academic data.</p>
+                    <h4 class="font-semibold text-[#17321A] mt-6">Data Collection</h4>
+                    <p>We collect only necessary academic information to provide our services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Close modals when clicking outside
+        document.querySelectorAll('.fixed').forEach(modal => {
+            modal.addEventListener('click', function(event) {
+                if (event.target === this) {
+                    this.classList.add('hidden');
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const fadeInOnScroll = function() {
+                fadeElements.forEach(function(element) {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+                    
+                    if (elementTop < window.innerHeight - elementVisible) {
+                        element.classList.add('visible');
+                    }
+                });
+            };
+            
+            fadeInOnScroll();
+            window.addEventListener('scroll', fadeInOnScroll);
+        });
+    </script>
+
+</body>
+
+</html>
