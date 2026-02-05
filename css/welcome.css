@@ -1,0 +1,34 @@
+       
+       
+ :root {
+            --dark-green: #17321A;
+            --green: #146939;
+            --light-green: #00954F;
+            --golden-yellow: #FDC530;
+            --corn-yellow: #FCD83D;
+            --yellow: #FFE800;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f0f8f0 0%, #ffffff 100%);
+        }
